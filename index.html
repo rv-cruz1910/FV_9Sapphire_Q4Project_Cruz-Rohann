@@ -298,24 +298,30 @@ h2 {
     </div>
 
     <script>
-        function ratePortfolio() {
-            var rating = parseInt(document.getElementById("ratingInput").value);
-            var feedback = document.getElementById("feedbackInput").value;
+      <script>
+    function ratePortfolio() {
+        var ratingInput = document.getElementById("ratingInput").value;
+        var feedback = document.getElementById("feedbackInput").value;
+        var rating = Number(ratingInput);
 
-            if (rating === 5) {
-                alert("Thank you! I'm glad you loved it!");
-            } else if (rating >= 3 && rating < 5) {
-                alert("Thanks! I'll keep improving.");
-            } else if (rating >= 1 && rating < 3) {
-                alert("I appreciate your honesty. I'll work harder!");
-            } else {
-                alert("Please enter a rating between 1 and 5.");
-                return;
-            }
-
-            console.log("User Rating:", rating);
-            console.log("User Feedback:", feedback);
+        if (rating < 1 || rating > 5) {
+            alert("Please enter a rating between 1 and 5.");
+            return;
         }
+
+        if (rating === 5) {
+            alert("Thank you! I'm glad you loved it!");
+        } else if (rating >= 3) {
+            alert("Thanks! I'll keep improving.");
+        } else {
+            alert("I appreciate your honesty. I'll work harder!");
+        }
+
+        console.log("User Rating:", rating);
+        console.log("User Feedback:", feedback);
+    }
+</script>
+
     </script>
 
     <div class="container4">
